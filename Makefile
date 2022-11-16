@@ -1,2 +1,7 @@
+all: build run
+
+build:
+	docker build . -t go-gcp-k8s
+
 run:
-	go run cmd/go-gcp-k8s/main.go
+	docker run -p 10000:10000 go-gcp-k8s
