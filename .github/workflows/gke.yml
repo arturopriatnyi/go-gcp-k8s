@@ -9,7 +9,7 @@ on:
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: autopilot-cluster-1
-  GKE_ZONE: europe-central2-a
+  GKE_ZONE: us-central1
   DEPLOYMENT_NAME: go-gcp-k8s
 
 jobs:
