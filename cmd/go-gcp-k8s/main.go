@@ -21,7 +21,7 @@ func main() {
 		Addr: ":10000",
 		Handler: http.HandlerFunc(
 			func(w http.ResponseWriter, _ *http.Request) {
-				if _, err := w.Write([]byte("Hello from GCP Kubernetes!")); err != nil {
+				if _, err := w.Write([]byte("UPD: Hello from GCP Kubernetes!")); err != nil {
 					l.Printf("response writing failed: %v", err)
 				}
 			},
