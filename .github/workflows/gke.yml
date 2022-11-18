@@ -28,11 +28,9 @@ jobs:
 
       # Configure Workload Identity Federation and generate an access token.
       - id: 'auth'
-        name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v1'
         with:
-          workload_identity_provider: 'projects/459840874816/locations/global/workloadIdentityPools/github/providers/provider'
-          service_account: '112011765862088950474@459840874816.iam.gserviceaccount.com'
+          credentials_json: '${{ secrets.GKE_SA_KEY }}'
 
       # Setup gcloud CLI
       - name: Set up Cloud SDK
