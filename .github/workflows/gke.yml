@@ -34,7 +34,7 @@ jobs:
 
       - run: |-
           docker build -t imarrche/go-gcp-k8s .
-          docker push
+          docker push imarrche/go-gcp-k8s
 
       # Configure Workload Identity Federation and generate an access token.
       - id: 'auth'
