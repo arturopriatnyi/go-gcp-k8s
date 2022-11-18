@@ -40,7 +40,7 @@ jobs:
 
       # Get the GKE credentials so we can deploy to the cluster
       - run: |-
-          gcloud config set account ACCOUNT
+          gcloud auth login
           gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
       # Deploy sample image to the GKE cluster
       - name: Deploy
