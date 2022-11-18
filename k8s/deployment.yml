@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: go-gcp-k8s
+
+spec:
+  selector:
+    matchLabels:
+      app: go-gcp-k8s
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: go-gcp-k8s
+    spec:
+      containers:
+        - name: go-gcp-k8s
+          image: imarrche/go-gcp-k8s
+          ports:
+            - containerPort: 10000
+
+---
+
+apiVersion: v1
+
+kind: Service
+
+metadata:
+  name: go-gcp-k8s
+
+spec:
+  selector:
+    app: go-gcp-k8s
+  ports:
+    - protocol: TCP
+      port: 10000
+  type: LoadBalancer
